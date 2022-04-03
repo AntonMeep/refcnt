@@ -7,7 +7,7 @@ generic
    type Element_Type (<>) is private;
 
    with procedure Free (This : in out Element_Type) is null;
-package RefCnt is
+package RefCnt with Preelaborate is
    type Reference is tagged private;
 
    Null_Reference : constant Reference;
