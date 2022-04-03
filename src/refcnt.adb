@@ -6,14 +6,8 @@ with Atomic.Unsigned_32; use Atomic.Unsigned_32;
 
 package body RefCnt is
    function Clone (This : Reference'Class) return Reference is
-      Result : Reference;
-   begin
-      Result.Payload := This.Payload;
-      if Result.Payload /= null then
-         Store (Result.Payload.all.Count, 1);
-      end if;
-      return Result;
-   end Clone;
+     (if This.Payload = null then Null_Reference
+      else Create (This.Payload.all.Element.all));
 
    function Create (Element : Element_Type) return Reference is
       Result : Reference := Null_Reference;
