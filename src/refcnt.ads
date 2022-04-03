@@ -7,7 +7,9 @@ generic
    type Element_Type (<>) is private;
 
    with procedure Free (This : in out Element_Type) is null;
-package RefCnt with Preelaborate is
+package RefCnt with
+   Preelaborate
+is
    type Reference is tagged private;
 
    Null_Reference : constant Reference;
@@ -15,6 +17,8 @@ package RefCnt with Preelaborate is
    type Accessor (Element : not null access Element_Type)
    is limited null record with
       Implicit_Dereference => Element;
+
+   function Clone (This : Reference'Class) return Reference;
 
    function Create (Element : Element_Type) return Reference;
 
