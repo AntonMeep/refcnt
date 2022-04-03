@@ -1,0 +1,11 @@
+name = "refcnt"
+description = "Reference Counted type for Ada"
+version = "0.0.0"
+licenses = "ISC"
+
+authors = ["Anton Fediushin"]
+maintainers = ["Anton Fediushin <imantonmeep@gmail.com>"]
+maintainers-logins = ["AntonMeep"]
+
+[[depends-on]]
+atomic = "^0.4.1"

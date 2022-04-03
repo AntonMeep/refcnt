@@ -1,0 +1,19 @@
+name = "refcnt_tests"
+description = "Test suite for refcnt"
+version = "0.0.0"
+
+authors = ["Anton Fediushin"]
+maintainers = ["Anton Fediushin <imantonmeep@gmail.com>"]
+maintainers-logins = ["AntonMeep"]
+
+executables = ["refcnt_tests"]
+
+[configuration]
+disabled = true
+
+[[depends-on]]
+aunit = "^22.0.0"
+refcnt = "*"
+
+[[pins]]
+refcnt = { path = "../" }
